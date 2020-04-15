@@ -22,3 +22,5 @@ Route::post('/toko/create','StationeryController@create');
 Route::get('/toko/{id}/edit', 'StationeryController@edit');
 Route::post('/toko/{id}/update', 'StationeryController@update');
 Route::get('/toko/{id}/delete' , 'StationeryController@delete');
+
+Route::get('/toko/export_excel', 'StationeryController@export_excel');

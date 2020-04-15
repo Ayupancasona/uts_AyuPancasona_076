@@ -13,6 +13,8 @@
 <input class="form-control" type="text" placeholder="Search" aria-label="Search"><br>
 
 	<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal"> Tambah data </button>
+	<a href="/toko/export_excel" class="btn btn-success my-3" target="_blank">EXPORT EXCEL</a>
+		
 <!-- Modal -->
 	<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
 	  <div class="modal-dialog" role="document">

@@ -2,7 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Toko;
 use Illuminate\Http\Request;
+use App\Exports\TokoExport;
+use Maatwebsite\Excel\Facades\Excel;
+use App\Http\Controllers\Controller;
 
 class StationeryController extends Controller
 {
@@ -12,6 +16,10 @@ class StationeryController extends Controller
 
     	$data_toko = \App\Toko::all();
     	return view('toko.index',['data_toko' => $data_toko]);
+    }
+    public function export_excel()
+    {
+        return Excel::download(new TokoExport, 'toko.xlsx');
     }
 
     public function create(Request $request)
