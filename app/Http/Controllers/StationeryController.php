@@ -9,12 +9,16 @@ use Maatwebsite\Excel\Facades\Excel;
 use App\Http\Controllers\Controller;
 
 class StationeryController extends Controller
-{
-    public function index()
+{ 
+    public function index(Request $request)
     {
+        if ($request->has('cari')){
+            $data_toko = \App\Toko::where('nama_barang', 'LIKE','%'.$request->cari.'%')->orWhere('kode_barang','LIKE','%'.$request->cari.'%')->get();
+        }else{
+            $data_toko = \App\Toko::all();
+        }
     	// view adalh function untuk memanggil file untuk  ditmpilkan pd get_browser
-
-    	$data_toko = \App\Toko::all();
+    	
     	return view('toko.index',['data_toko' => $data_toko]);
     }
     public function export_excel()

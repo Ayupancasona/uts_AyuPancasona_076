@@ -14,12 +14,12 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('dashboard');
 });
 
-Route::get('/toko','StationeryController@index');
-Route::post('/toko/create','StationeryController@create');
-Route::get('/toko/{id}/edit', 'StationeryController@edit');
+Route::get('/toko','StationeryController@index')->name("toko.index");
+Route::get('/toko/create','StationeryController@create')->name("toko.create");
+Route::get('/toko/{id}/edit', 'StationeryController@edit')->name("toko.edit");
 Route::post('/toko/{id}/update', 'StationeryController@update');
 Route::get('/toko/{id}/delete' , 'StationeryController@delete');
 

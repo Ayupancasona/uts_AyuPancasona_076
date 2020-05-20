@@ -1,7 +1,34 @@
-@extends("layout")
+@extends("layout.app")
+
+@push("style")
+    <link rel="stylesheet" href="{{ asset('plugins/datatables-bs4/css/dataTables.bootstrap4.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('plugins/datatables-responsive/css/responsive.bootstrap4.min.css') }}">
+@endpush
 
 @section("content")
-	<h1>Data Toko Stationery</h1>
+<!-- Content Header (Page header) -->
+    <div class="content-header">
+      <div class="container-fluid">
+        <div class="row mb-2">
+          <div class="col-sm-6">
+            <h1 class="m-0 text-dark">Toko Stationery</h1>
+          </div><!-- /.col -->
+          <div class="col-sm-6">
+            <ol class="breadcrumb float-sm-right">
+              <!-- <li class="breadcrumb-item"><a href="#">Kelola Mahasiswa</a></li>
+              <li class="breadcrumb-item active">Daftar Mahasiswa</li> -->
+            </ol>
+          </div><!-- /.col -->
+        </div><!-- /.row -->
+      </div><!-- /.container-fluid -->
+    </div>
+    
+    <!-- /.content-header -->
+ <section class="content">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12">
+	
 	<!-- <a href="#" class="btn btn-primary">Tambah</a> -->
 
 	@if(session('sukses'))
@@ -40,5 +67,8 @@
 	  </div>
 	</div>
 
-	
+	</div>
+</div>
+</div>
+</section>
 @endsection
